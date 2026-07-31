@@ -3,3 +3,5 @@ SpeechRecognition
 pyttsx3
 pyaudio
 python-dotenv
+openai-whisper
+flask
