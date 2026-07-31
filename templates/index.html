@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Receptionist Dashboard</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th,td{
+            padding:12px;
+            border:1px solid #ddd;
+            text-align:left;
+        }
+
+        th{
+            background:#0078d4;
+            color:white;
+        }
+
+        h1{
+            color:#333;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>📞 AI Personal Receptionist</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Reason</th>
+<th>Time</th>
+</tr>
+
+{% for call in calls %}
+
+<tr>
+<td>{{call[0]}}</td>
+<td>{{call[1]}}</td>
+<td>{{call[2]}}</td>
+<td>{{call[3]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
