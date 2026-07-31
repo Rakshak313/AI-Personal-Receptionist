@@ -207,7 +207,7 @@ bash test_pjsip_fix.sh
 bash test_repair_pjsip.sh
 ```
 
-> ⚠️ **Security note:** The sample configs and repair scripts (`pjsip_minimal.conf`, `repair_pjsip.sh`) contain the **lab-only** SIP password `123456` for extension `1001` (local WSL2 + Linphone test setup). These are **not production credentials** — always change the SIP password before any real deployment.
+> ⚠️ **Security note:** The sample configs and repair scripts (`pjsip_minimal.conf`, `repair_pjsip.sh`) contain the **lab-only** SIP password `AIReceptionist@2026` for extension `1001` (local WSL2 + Linphone test setup). These are **not production credentials** — always change the SIP password before any real deployment.
 
 ---
 

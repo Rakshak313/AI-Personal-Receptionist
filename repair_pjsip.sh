@@ -9,7 +9,7 @@
 #    - recovers the original [1001] auth/aor sections from the pre-fix backup
 #      (pjsip.conf.bak-20260731-155315) when they exist there,
 #    - otherwise creates them from the expected configuration
-#      (username=1001 / password=123456 / max_contacts=1),
+#      (username=1001 / password=AIReceptionist@2026 / max_contacts=1),
 #    - NEVER modifies the transport or the [1001] endpoint,
 #    - reloads PJSIP and verifies transports/endpoints/auths/aors/contacts.
 #  Run as root:  sudo bash repair_pjsip.sh
@@ -96,7 +96,7 @@ def ensure_object(name, wanted_type, fallback_lines, label):
         print(f"  [CREATED] [{name}] type={wanted_type} from expected configuration (not found in backup).")
 
 ensure_object('1001', 'auth',
-    ["auth_type=userpass", "username=1001", "password=123456"],
+    ["auth_type=userpass", "username=1001", "password=AIReceptionist@2026"],
     "pjsip.conf.bak-20260731-155315")
 ensure_object('1001', 'aor',
     ["max_contacts=1"],

@@ -51,7 +51,7 @@ aors=1001
 type=auth
 auth_type=userpass
 username=1001
-password=123456
+password=AIReceptionist@2026
 
 [1001]
 type=aor
@@ -69,7 +69,7 @@ N1=$(grep -c '^\[1001\]' "$TMP/sample_a.conf")
 grep -q 'type=endpoint' "$TMP/sample_a.conf" || fail "scenario A: endpoint lost"
 grep -q 'type=auth' "$TMP/sample_a.conf" || fail "scenario A: auth lost"
 grep -q 'type=aor' "$TMP/sample_a.conf" || fail "scenario A: aor lost"
-grep -q 'password=123456' "$TMP/sample_a.conf" || fail "scenario A: auth password lost"
+grep -q 'password=AIReceptionist@2026' "$TMP/sample_a.conf" || fail "scenario A: auth password lost"
 grep -q 'context=from-internal' "$TMP/sample_a.conf" || fail "scenario A: endpoint body lost"
 grep -q 'bind=0.0.0.0:5060' "$TMP/sample_a.conf" || fail "scenario A: kept transport bind lost"
 echo "PASS: scenario A (true duplicate removed; endpoint/auth/aor all preserved)"

@@ -9,7 +9,7 @@
 #       -> auth/aor must be recovered VERBATIM from the backup
 #    4. Scenario R2: no backup file exists
 #       -> auth/aor must be created from the expected configuration
-#          (username=1001 / password=123456 / max_contacts=1)
+#          (username=1001 / password=AIReceptionist@2026 / max_contacts=1)
 #    In both scenarios the transport and endpoint must be untouched.
 # ============================================================================
 set -u
@@ -74,7 +74,7 @@ grep -q 'password=original-secret' "$TMP/r1_current.conf" || fail "R1: auth NOT 
 grep -q 'max_contacts=1' "$TMP/r1_current.conf" || fail "R1: aor not present"
 grep -q 'disallow=all' "$TMP/r1_current.conf" || fail "R1: endpoint body was modified"
 [ "$(grep -c '^\[transport-udp\]' "$TMP/r1_current.conf")" = "1" ] || fail "R1: transport section was touched"
-grep -q 'password=123456' "$TMP/r1_current.conf" && fail "R1: fallback password leaked in despite backup recovery"
+grep -q 'password=AIReceptionist@2026' "$TMP/r1_current.conf" && fail "R1: fallback password leaked in despite backup recovery"
 echo "PASS: scenario R1 (auth/aor recovered verbatim; transport+endpoint untouched)"
 
 echo
@@ -99,7 +99,7 @@ echo "--- resulting file:"
 cat "$TMP/r2_current.conf"
 
 [ "$(grep -c '^\[1001\]' "$TMP/r2_current.conf")" = "3" ] || fail "R2: expected 3 [1001] sections"
-grep -q 'password=123456' "$TMP/r2_current.conf" || fail "R2: auth not created from expected config"
+grep -q 'password=AIReceptionist@2026' "$TMP/r2_current.conf" || fail "R2: auth not created from expected config"
 grep -q 'username=1001' "$TMP/r2_current.conf" || fail "R2: auth username missing"
 grep -q 'auth_type=userpass' "$TMP/r2_current.conf" || fail "R2: auth_type missing"
 grep -q 'type=aor' "$TMP/r2_current.conf" || fail "R2: aor not created"
